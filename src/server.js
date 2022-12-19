@@ -18,5 +18,5 @@ app.use(urlsRouters);
 app.use(usersRouters);
 app.use(rankingRouters);
 
-const port = process.env.PORT || 4000;
+const port = process.env.PORT;
 app.listen(port, () => console.log(`Server running in port ${port}`));
