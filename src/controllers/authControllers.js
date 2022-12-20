@@ -3,7 +3,6 @@ import connection from '../database/db.js'
 export async function postSignUp (req, res) {
     const { name, email } = req.body
     const password = res.locals.passwordHash
-    console.log(password)
 
     try {
         await connection.query('INSERT INTO users (name, email, password) VALUES ($1, $2, $3)', [name, email, password]);
