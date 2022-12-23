@@ -15,6 +15,9 @@ export default async function getUserValidation (req, res, next) {
             return res.sendStatus(404)
         }
 
+        const urlCreated = await connection.query('SELECT * FROM urls WHERE id = $1;', [sessionsExist.rows[0].userId]);
+
+        res.locals.urlCount = urlCreated.rowCount
         res.locals.userId = sessionsExist.rows[0].userId
     } catch (error) {
         console.log(error)
