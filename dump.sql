@@ -11,6 +11,7 @@ CREATE TABLE "urls" (
 	"url" TEXT NOT NULL,
 	"shortUrl" TEXT NOT NULL,
 	"visitCount" INTEGER NOT NULL DEFAULT 0,
+	"createdAt" NOT NULL DEFAULT NOW()
 );
 
 CREATE TABLE "sessions" (
